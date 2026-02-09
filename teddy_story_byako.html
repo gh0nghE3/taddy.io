@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Teddy Day 💝</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #ffc0cb;
+      overflow-x: hidden;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      background: #ffc0cb;
+      padding: 15px 0;
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px #ff4081;
+      position: relative;
+      z-index: 10;
+    }
+
+    .container {
+      position: relative;
+      z-index: 5;
+      max-width: 768px;
+      width: 90%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .shayari {
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 4px #ff4081;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      backdrop-filter: blur(5px);
+      margin-bottom: 20px;
+      width: 90%;
+    }
+
+    .btn {
+      background: #ff4081;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #e91e63;
+    }
+
+    #quiz {
+      display: none;
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      color: #fff;
+      text-align: left;
+    }
+
+    #quiz h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .question {
+      margin-bottom: 15px;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+      accent-color: #ff4081;
+    }
+
+    #result {
+      display: none;
+      font-size: 1.4rem;
+      background: rgba(255,255,255,0.3);
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    img.teddy {
+      position: absolute;
+      bottom: 0;
+      right: 10%;
+      width: 220px;
+      max-width: 250px;
+      height: auto;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    audio { display: none; }
+  </style>
+</head>
+<body>
+ <audio id="bgMusic" src="Dass ve ladai yaara kithe ni hundi Tere bina mood off tere pyar da, Teri Naar, Kaim Status 2019.mp3" autoplay loop hidden></audio>
+
+  <header>Happy Teddy Day 🧸💖 Bayko!</header>
+
+  <div class="container">
+    <div class="shayari">
+      💕 “Tera naam mere hothon pe aake ruk jaata hai,<br>
+      Tere bina dil mera udaas ho jaata hai,<br>
+      Tu zindagi ka wo pyara sa teddy hai,<br>
+      Jise dekh ke dil mera khil jaata hai!” 💕
+    </div>
+
+    <button class="btn" onclick="startQuiz()">💘 Start the Love Quiz!</button>
+
+    <div id="quiz">
+      <h2>💞 Love Quiz 💞</h2>
+      <form id="quizForm">
+        <div class="question">
+          <p>1️⃣ Who is my cutest Teddy?</p>
+          <label><input type="radio" name="q1" value="A"> Me</label>
+          <label><input type="radio" name="q1" value="B"> You 😍</label>
+          <label><input type="radio" name="q1" value="C"> Someone else?</label>
+        </div>
+
+        <div class="question">
+          <p>2️⃣ What color Teddy do you love?</p>
+          <label><input type="radio" name="q2" value="A"> Brown 🐻</label>
+          <label><input type="radio" name="q2" value="B"> Pink 💗</label>
+          <label><input type="radio" name="q2" value="C"> Blue 💙</label>
+        </div>
+
+        <div class="question">
+          <p>3️⃣ What do you like most about me?</p>
+          <label><input type="radio" name="q3" value="A"> My Smile 😁</label>
+          <label><input type="radio" name="q3" value="B"> My Eyes 👀</label>
+          <label><input type="radio" name="q3" value="C"> Everything 💖</label>
+        </div>
+
+        <button type="button" class="btn" onclick="checkAnswers()">Submit 💌</button>
+      </form>
+    </div>
+
+    <div id="result">🎁 You Won My Heart! 💖<br><br>You're my cutest Teddy forever! 🧸💞</div>
+  </div>
+
+  <img src="https://pngimg.com/uploads/teddy_bear/teddy_bear_PNG85.png" alt="Blue Teddy" class="teddy" />
+
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    function startQuiz() {
+      document.getElementById('quiz').style.display = 'block';
+      document.querySelector('.btn').style.display = 'none';
+    }
+
+    function checkAnswers() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+
+      if (!q1 || !q2 || !q3) {
+        alert("Please answer all questions 💖");
+        return;
+      }
+
+      // 💡 Change correct answers here if you want!
+      if (q1.value === "A" && q2.value === "B" && q3.value === "C") {
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('quiz').style.display = 'none';
+        alert("💞 You Won My Heart! Love You My Teddy 💖");
+      } else {
+        alert("Aww! Try again my love 😘");
+      }
+    }
+
+    function createHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHearts, 400);
+  </script>
+  <script>
+  document.addEventListener("click", () => {
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+      music.play().catch(()=>{});
+    }
+  });
+</script>
+</body>
+</html>
